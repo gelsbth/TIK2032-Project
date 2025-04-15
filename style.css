@@ -76,6 +76,7 @@ ul li a:hover {
 /* Section Styling */
 .section {
   background-color: var(--extra-light);
+  padding-top: 120px;
 }
 
 .section__container {
