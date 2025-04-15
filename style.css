@@ -138,17 +138,6 @@ nav ul li a:hover {
 }
 
 
-/* Footer Styling */
-footer {
-    background: #f1f1f1; /* Warna header yang lebih terang */
-    color: #333;
-    text-align: center;
-    padding: 15px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    font-size: 1em;
-}
 
 /* Button Styling */
 .btn {
