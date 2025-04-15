@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div id="welcomeMessage" class="welcome-message">
+    Welcome to my portfolio
+  </div>
+
     <nav>
       <div class="nav__content">
         <div class="logo">Portfolio</div>
@@ -35,6 +39,19 @@
         </div>
       </div>
     </section>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        
+        const welcomeMessage = document.getElementById('welcomeMessage');
+        welcomeMessage.style.display = 'block';
+
+        
+        setTimeout(function() {
+          welcomeMessage.style.display = 'none';
+        }, 3000);
+      });
+    </script>
 
 </body>
 </html>
