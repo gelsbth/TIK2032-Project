@@ -91,7 +91,7 @@ ul li a:hover {
 /* Section Styling */
 .section {
   background-color: var(--extra-light);
-  padding-top: 100px;
+  padding-top: 80px;
 }
 
 .section__container {
@@ -200,7 +200,7 @@ ul li a:hover {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
-    padding-top: 150px;
+    padding-top: 120px;
 }
 
 .galeri img {
@@ -213,7 +213,7 @@ ul li a:hover {
 .blogg {
     max-width: 800px;
     margin: auto;
-    padding-top: 150px;
+    padding-top: 120px;
 }
 
 article {
