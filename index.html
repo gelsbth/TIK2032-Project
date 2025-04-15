@@ -38,7 +38,7 @@
     
 <script>
     function clickNav(element) {
-        // Reset warna semua link dulu
+        
         const links = document.querySelectorAll('.nav-link');
         links.forEach(link => {
             link.style.color = 'white';
@@ -46,7 +46,7 @@
             link.style.textDecoration = 'none';
         });
 
-        // Baru kasih style ke yang diklik
+
         element.style.color = '#3498db';
         element.style.fontWeight = 'bold';
         element.style.textDecoration = 'underline';
