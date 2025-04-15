@@ -10,12 +10,18 @@ body {
 
 /* Header Styling */
 header {
-    background: #f1f1f1; /* Warna header yang lebih terang */
-    color: #333;
-    padding: 20px;
-    text-align: left;
-    font-size: 1.5em;
-    font-weight: bold;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    z-index: 99;
+    max-width: var(--max-width);
+  margin: auto;
+  padding: 1.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 /* Navigation Styling */
