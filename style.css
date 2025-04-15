@@ -79,11 +79,10 @@ ul li a:hover {
 }
 
 .section__container {
+  padding: 10rem 1rem 5rem 1rem;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 40px;
-  flex-wrap: wrap; /* biar responsif */
+  text-align: center;
+  flex-direction: column;
 }
 
 .content {
@@ -120,7 +119,7 @@ ul li a:hover {
   width: 250px;
   height: 250px;
   object-fit: cover;
-  border-radius: 50%; /* ini bikin gambar jadi bulat */
+  border-radius: 50%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
