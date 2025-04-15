@@ -44,29 +44,35 @@ nav ul li a:hover {
 
 /* Section Styling */
 section {
-    padding: 40px 20px;
-    text-align: center;
+    padding: 40px 60px;
+    text-align: left; /* teks di kiri */
     background-color: #fff;
     margin-top: 20px;
 }
 
-/* Styling for the "Hello, I'm" and "Gloria Rondonuwu" */
-section h2 {
+.intro h2 {
     font-size: 2.5em;
-    color: #333; /* Teks utama hitam */
-    margin-bottom: 10px;
+    color: #777; /* Hello, I'm warna tipis */
+    margin-bottom: 0;
 }
 
-section h2 span {
+.intro h2 span {
     font-weight: bold;
     font-size: 3em;
-    color: #333; /* Teks "Gloria Rondonuwu" hitam tebal */
+    color: #000; /* Gloria Rondonuwu tebal */
 }
 
-section h3 {
+.intro h3 {
     font-size: 1.5em;
-    color: #777; /* Warna abu-abu tipis untuk "Hello, I'm" */
-    margin-top: 0;
+    color: #555;
+    margin-top: 10px;
+}
+
+.intro p {
+    margin-top: 15px;
+    font-size: 1.1em;
+    color: #333;
+    max-width: 600px;
 }
 
 /* Footer Styling */
