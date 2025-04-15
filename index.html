@@ -11,10 +11,10 @@
       <div class="nav__content">
         <div class="logo">Portfolio</div>
         <ul>
-        <li><a href="index.html" class="nav-link" onmouseover="hoverNav(this)" onmouseout="unhoverNav(this)">Home</a></li>
-        <li><a href="gallery.html" class="nav-link" onmouseover="hoverNav(this)" onmouseout="unhoverNav(this)">Gallery</a></li>
-        <li><a href="blog.html" class="nav-link" onmouseover="hoverNav(this)" onmouseout="unhoverNav(this)">Blog</a></li>
-        <li><a href="contact.html" class="nav-link" onmouseover="hoverNav(this)" onmouseout="unhoverNav(this)">Contact</a></li>
+        <li><a href="index.html" class="nav-link" onclick="clickNav(this)">Home</a></li>
+        <li><a href="gallery.html" class="nav-link" onclick="clickNav(this)">Gallery</a></li>
+        <li><a href="blog.html" class="nav-link" onclick="clickNav(this)">Blog</a></li>
+        <li><a href="contact.html" class="nav-link" onclick="clickNav(this)">Contact</a></li>
     </ul>
       </div>
     </nav>
@@ -37,16 +37,19 @@
     </section>
     
 <script>
-    function hoverNav(element) {
-        element.style.color = "#3498db"; // Warna saat mouse di atas
-        element.style.textDecoration = "underline";
-        element.style.fontWeight = "bold";
-    }
+    function clickNav(element) {
+        // Reset warna semua link dulu
+        const links = document.querySelectorAll('.nav-link');
+        links.forEach(link => {
+            link.style.color = 'white';
+            link.style.fontWeight = 'normal';
+            link.style.textDecoration = 'none';
+        });
 
-    function unhoverNav(element) {
-        element.style.color = "white"; // Kembali ke warna awal
-        element.style.textDecoration = "none";
-        element.style.fontWeight = "normal";
+        // Baru kasih style ke yang diklik
+        element.style.color = '#3498db';
+        element.style.fontWeight = 'bold';
+        element.style.textDecoration = 'underline';
     }
 </script>
 
