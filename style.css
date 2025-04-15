@@ -200,7 +200,7 @@ ul li a:hover {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
-    padding-top: 110px;
+    padding-top: 118px;
 }
 
 .galeri img {
@@ -213,7 +213,7 @@ ul li a:hover {
 .blogg {
     max-width: 800px;
     margin: auto;
-    padding-top: 110px;
+    padding-top: 118px;
 }
 
 article {
