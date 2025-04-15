@@ -11,10 +11,10 @@
       <div class="nav__content">
         <div class="logo">Portfolio</div>
         <ul>
-        <li><a href="index.html" class="nav-link" onclick="clickNav(this)">Home</a></li>
-        <li><a href="gallery.html" class="nav-link" onclick="clickNav(this)">Gallery</a></li>
-        <li><a href="blog.html" class="nav-link" onclick="clickNav(this)">Blog</a></li>
-        <li><a href="contact.html" class="nav-link" onclick="clickNav(this)">Contact</a></li>
+        <li><a href="index.html" class="nav-link" onclick="clickNav(this, event)">Home</a></li>
+        <li><a href="gallery.html" class="nav-link" onclick="clickNav(this, event)">Gallery</a></li>
+        <li><a href="blog.html" class="nav-link" onclick="clickNav(this, event)">Blog</a></li>
+        <li><a href="contact.html" class="nav-link" onclick="clickNav(this, event)">Contact</a></li>
     </ul>
       </div>
     </nav>
@@ -37,20 +37,20 @@
     </section>
     
 <script>
-    function clickNav(element) {
-        
-        const links = document.querySelectorAll('.nav-link');
-        links.forEach(link => {
-            link.style.color = 'white';
-            link.style.fontWeight = 'normal';
-            link.style.textDecoration = 'none';
-        });
+  function clickNav(element, event) {
+    event.preventDefault(); // Mencegah navigasi
 
+    const links = document.querySelectorAll('.nav-link');
+    links.forEach(link => {
+      link.style.color = 'white';
+      link.style.fontWeight = 'normal';
+      link.style.textDecoration = 'none';
+    });
 
-        element.style.color = '#3498db';
-        element.style.fontWeight = 'bold';
-        element.style.textDecoration = 'underline';
-    }
+    element.style.color = '#3498db';
+    element.style.fontWeight = 'bold';
+    element.style.textDecoration = 'underline';
+  }
 </script>
 
 </body>
