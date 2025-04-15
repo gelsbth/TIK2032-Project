@@ -3,15 +3,15 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #fafafa; /* Warna latar belakang cerah */
+    background-color: #fff; /* Latar belakang putih */
     color: #333;
     line-height: 1.6;
 }
 
 /* Header Styling */
 header {
-    background: #3498db; /* Warna biru cerah */
-    color: white;
+    background: #f1f1f1; /* Warna header yang lebih terang */
+    color: #333;
     padding: 20px;
     text-align: left;
     font-size: 1.5em;
@@ -32,14 +32,14 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: #333;
     text-decoration: none;
     font-size: 1.1em;
 }
 
 nav ul li a:hover {
     text-decoration: underline;
-    color: #f1c40f; /* Warna kuning saat hover */
+    color: #3498db; /* Warna biru saat hover */
 }
 
 /* Section Styling */
@@ -50,82 +50,35 @@ section {
     margin-top: 20px;
 }
 
+/* Styling for the "Hello, I'm" and "Gloria Rondonuwu" */
 section h2 {
     font-size: 2.5em;
-    color: #3498db; /* Warna biru cerah */
-    margin-bottom: 20px;
+    color: #333; /* Teks utama hitam */
+    margin-bottom: 10px;
+}
+
+section h2 span {
+    font-weight: bold;
+    font-size: 3em;
+    color: #333; /* Teks "Gloria Rondonuwu" hitam tebal */
+}
+
+section h3 {
+    font-size: 1.5em;
+    color: #777; /* Warna abu-abu tipis untuk "Hello, I'm" */
+    margin-top: 0;
 }
 
 /* Footer Styling */
 footer {
-    background: #2c3e50; /* Warna gelap */
-    color: white;
+    background: #f1f1f1; /* Warna header yang lebih terang */
+    color: #333;
     text-align: center;
     padding: 15px;
     position: fixed;
     width: 100%;
     bottom: 0;
     font-size: 1em;
-}
-
-/* Gallery Styling */
-.galeri {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsif grid */
-    gap: 15px;
-    padding: 20px;
-}
-
-.galeri img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-}
-
-.galeri img:hover {
-    transform: scale(1.05); /* Efek zoom pada gambar */
-}
-
-/* Blog Styling */
-.blogg {
-    max-width: 1000px;
-    margin: auto;
-    padding: 20px;
-}
-
-article {
-    background: #fff;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-article h2 {
-    color: #3498db; /* Warna biru cerah untuk judul */
-    font-size: 1.8em;
-    margin-bottom: 10px;
-}
-
-article p {
-    font-size: 1.1em;
-    color: #555;
-}
-
-article a {
-    display: inline-block;
-    margin-top: 15px;
-    color: #3498db; /* Biru cerah untuk link */
-    font-size: 1.1em;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-article a:hover {
-    color: #f1c40f; /* Warna kuning saat hover */
-    text-decoration: underline;
 }
 
 /* Button Styling */
