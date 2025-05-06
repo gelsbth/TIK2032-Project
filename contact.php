@@ -6,10 +6,32 @@
     <title>Personal Website Gloria</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .flash-message {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #4CAF50;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 5px;
+            z-index: 1000;
+            animation: fadeInOut 1s forwards;
+            display: none;
+        }
+        
+        @keyframes fadeInOut {
+            0% { opacity: 0; top: 0; }
+            10% { opacity: 1; top: 20px; }
+            90% { opacity: 1; top: 20px; }
+            100% { opacity: 0; top: 0; }
+        }
+    </style>
 </head>
 <body>
+    <div id="flashMessage" class="flash-message"></div>
     <nav>
-        <!-- Navbar -->
         <div class="nav__content">
             <div class="logo"><a href="index.html">Portfolio</a></div>
             <label for="check" class="checkbox">
@@ -45,9 +67,7 @@
             </div>
 
             <?php
-            // PROSES FORM JIKA DI-SUBMIT
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                // Koneksi Database
                 $db_host = "localhost";
                 $db_user = "root";
                 $db_pass = "";
@@ -57,13 +77,14 @@
                     $conn = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
                     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                    // Ambil dan sanitasi data
+                    // mengambil data
                     $fullname = htmlspecialchars($_POST['name']);
+                    $firstName = explode(" ", $fullname)[0];
                     $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
                     $subject = htmlspecialchars($_POST['subject'] ?? 'No Subject');
                     $message = htmlspecialchars($_POST['message']);
 
-                    // Simpan ke database
+                    // menyimpan ke database
                     $stmt = $conn->prepare("INSERT INTO messages (fullname, email, subject, message) 
                                           VALUES (:fullname, :email, :subject, :message)");
                     $stmt->execute([
@@ -72,19 +93,36 @@
                         ':subject' => $subject,
                         ':message' => $message
                     ]);
+		    
+                    session_start();
+                    $_SESSION['flash_message'] = "$firstName, Pesanmu berhasil dikirim!";
 
-                    // Redirect ke halaman yang sama untuk menghindari resubmit form
                     header("Location: ".$_SERVER['PHP_SELF']);
                     exit();
 
                 } catch(PDOException $e) {
-                    // Log error (opsional)
                     error_log("Database error: " . $e->getMessage());
+                    $_SESSION['flash_message'] = "Terjadi error, coba lagi nanti";
                 }
             }
+
+            session_start();
+            if (isset($_SESSION['flash_message'])) {
+                echo '<script>
+                    document.addEventListener("DOMContentLoaded", function() {
+                        var flash = document.getElementById("flashMessage");
+                        flash.textContent = "'.$_SESSION['flash_message'].'";
+                        flash.style.display = "block";
+                        setTimeout(function() {
+                            flash.style.display = "none";
+                        }, 5000);
+                    });
+                </script>';
+                unset($_SESSION['flash_message']);
+            }
+
             ?>
 
-            <!-- FORM KONTAK -->
             <form method="POST" class="contact-form">
                 <input type="text" name="name" class="nameZone" placeholder="Full Name" required>
                 <input type="email" name="email" class="emailZone" placeholder="Email" required>
